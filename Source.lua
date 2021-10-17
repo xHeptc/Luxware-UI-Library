@@ -502,7 +502,7 @@ function Luxt.CreateWindow(libName, logoId)
                 end)
             end
 
-                function ItemHandling:LuxtToggle(toggInfo, callback)
+                function ItemHandling:Toggle(toggInfo, callback)
                     local ToggleFrame = Instance.new("Frame")
                     local toggleFrame = Instance.new("Frame")
                     local UICorner = Instance.new("UICorner")
