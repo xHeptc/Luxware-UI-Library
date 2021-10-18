@@ -511,7 +511,7 @@ function Luxt1.CreateWindow(libName, logoId)
                     local togInList = Instance.new("UIListLayout")
                     local toginPad = Instance.new("UIPadding")
                     local UIListLayout = Instance.new("UIListLayout")
-
+                    local a 
                     --
                     toggInfo = toggInfo or "Toggle"
                     callback = callback or function() end
@@ -577,7 +577,7 @@ function Luxt1.CreateWindow(libName, logoId)
                         if not togDe then
                                 togDe = true
                                 on = not on
-                                spawn(function()
+                                a = spawn(function()
                                    callback(on) 
                                 end)
                                 if on then
@@ -590,6 +590,7 @@ function Luxt1.CreateWindow(libName, logoId)
                                     checkBtn.ImageColor3 = Color3.fromRGB(97, 97, 97)
                                     checkBtn.ImageRectOffset = Vector2.new(940, 784)
                                     checkBtn.ImageRectSize = Vector2.new(48,48)
+                                    a:Disconnect()
                                 end
                                 wait(1)
                                 togDe = false
@@ -713,7 +714,7 @@ function Luxt1.CreateWindow(libName, logoId)
                             textPlace = textPlace or "PlaceHolder"
                             callback = callback or function() end
                             --
-
+                            local a
                             local TextBoxFrame = Instance.new("Frame")
                             local textboxFrame = Instance.new("Frame")
                             local UICorner = Instance.new("UICorner")
@@ -795,11 +796,14 @@ function Luxt1.CreateWindow(libName, logoId)
 
                             TextBox.FocusLost:Connect(function(EnterPressed)
                                 if not EnterPressed then return end
-                                callback(TextBox.Text)
+                                a = spawn(function()
+                                    callback(TextBox.Text)
+                                end
                                 textboxFrame:TweenSize(UDim2.new(0, 359,0, 30), "InOut", "Quint", 0.18, true)
                                 wait(0.18)
                                 textboxFrame:TweenSize(UDim2.new(0, 365,0, 36), "InOut", "Quint", 0.18, true)
                                 TextBox.Text = ""  
+                                a:Disconnect()
                             end)
                         end
 
