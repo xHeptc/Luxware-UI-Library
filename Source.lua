@@ -577,9 +577,7 @@ function Luxt1.CreateWindow(libName, logoId)
                         if not togDe then
                                 togDe = true
                                 on = not on
-                                a = spawn(function()
-                                   callback(on) 
-                                end)
+                                 callback(on) 
                                 if on then
                                     checkBtn.Parent.toggleInfo.TextColor3 = Color3.fromRGB(153, 255, 238)
                                     checkBtn.ImageColor3 = Color3.fromRGB(153, 255, 238)
@@ -590,7 +588,6 @@ function Luxt1.CreateWindow(libName, logoId)
                                     checkBtn.ImageColor3 = Color3.fromRGB(97, 97, 97)
                                     checkBtn.ImageRectOffset = Vector2.new(940, 784)
                                     checkBtn.ImageRectSize = Vector2.new(48,48)
-                                    a:Disconnect()
                                 end
                                 wait(1)
                                 togDe = false
@@ -796,14 +793,11 @@ function Luxt1.CreateWindow(libName, logoId)
 
                             TextBox.FocusLost:Connect(function(EnterPressed)
                                 if not EnterPressed then return end
-                                a = spawn(function()
-                                    callback(TextBox.Text)
-                                end
+                                callback(TextBox.Text)
                                 textboxFrame:TweenSize(UDim2.new(0, 359,0, 30), "InOut", "Quint", 0.18, true)
                                 wait(0.18)
                                 textboxFrame:TweenSize(UDim2.new(0, 365,0, 36), "InOut", "Quint", 0.18, true)
                                 TextBox.Text = ""  
-                                a:Disconnect()
                             end)
                         end
 
