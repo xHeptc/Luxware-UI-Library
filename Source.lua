@@ -1260,4 +1260,4 @@ function Luxt1.CreateWindow(libName, logoId)
     return TabHandling
 end
 
-return Luxt
+return Luxt1
