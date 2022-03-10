@@ -30,11 +30,11 @@ function Luxt1.CreateWindow(libName, logoId)
     key1.Size = UDim2.new(0, 76, 0, 22)
     key1.ZIndex = 2
     key1.Font = Enum.Font.GothamSemibold
-    key1.Text = "LeftAlt"
+    key1.Text = "RightAlt"
     key1.TextColor3 = Color3.fromRGB(153, 255, 238)
     key1.TextSize = 14.000
 
-    local oldKey = Enum.KeyCode.LeftAlt.Name
+    local oldKey = Enum.KeyCode.RightAlt.Name
 
     key1.MouseButton1Click:connect(function(e) 
         key1.Text = ". . ."
@@ -143,7 +143,7 @@ function Luxt1.CreateWindow(libName, logoId)
     hubLogo.Position = UDim2.new(0.0567928664, 0, 0.0243411884, 0)
     hubLogo.Size = UDim2.new(0, 30, 0, 30)
     hubLogo.ZIndex = 2
-    hubLogo.Image = "rbxassetid://"..logoId
+    hubLogo.Image = "https://www.roblox.com/headshot-thumbnail/image?userId=".. game.Players.LocalPlayer.UserId .."&width=420&height=420&format=png"
 
     MainCorner_2.CornerRadius = UDim.new(0, 999)
     MainCorner_2.Name = "MainCorner"
